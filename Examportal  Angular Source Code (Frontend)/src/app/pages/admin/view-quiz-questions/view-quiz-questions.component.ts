@@ -62,4 +62,5 @@ export class ViewQuizQuestionsComponent implements OnInit {
       }
     });
   }
+
 }
