@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -23,7 +24,21 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question updateQuestion(Question question) {
-        return this.questionRepository.save(question);
+        Optional<Question> queOptional =questionRepository.findById(question.getQuesId());
+        if(queOptional==null){
+            System.out.println("question not found");
+        }
+        Question ques = queOptional.get();
+        ques.setAnswer(question.getAnswer());
+        ques.setContent(question.getContent());
+        ques.setImage(question.getImage());
+        ques.setOption1(question.getOption1());
+        ques.setOption2(question.getOption2());
+        ques.setOption3(question.getOption3());
+        ques.setOption4(question.getOption4());
+        ques.setGivenAnswer(question.getGivenAnswer());
+        questionRepository.save(ques);
+        return ques;
     }
 
     @Override

@@ -80,6 +80,12 @@ public class QuestionController {
         this.service.deleteQuestion(quesId);
     }
 
+    //update question 
+    @PutMapping("/updateQuestion/{quesId}")
+    public Question updateQue(@RequestBody Question question){
+        return this.service.updateQuestion(question);
+    }
+
 
     //eval quiz
     @PostMapping("/eval-quiz")

@@ -34,6 +34,10 @@ export class ViewQuizQuestionsComponent implements OnInit {
     );
   }
 
+  getQuestion(qid){
+
+  }
+
   //delete quesion
   deleteQuestion(qid) {
     Swal.fire({
