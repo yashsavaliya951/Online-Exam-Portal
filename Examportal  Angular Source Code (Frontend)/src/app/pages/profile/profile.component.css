@@ -14,3 +14,31 @@
   padding: 15px 10px;
   border: 0.5px solid #e2e2e2;
 }
+
+.black{
+  color: #0B0C10;
+}
+.black-back{
+  background-color: #0B0C10;
+}
+.grey-back{
+  background-color: #1F2833;
+}
+.green{
+  color: #45a29e;
+}
+.white{
+  color: white;
+}
+
+.blue{
+  color: #66FCF1;
+}
+.btn-blue{
+  background-color: #66FCF1;
+  color: black;
+}
+.silver{
+  color: #C5C6C7;
+}
+

@@ -1,15 +1,12 @@
-<mat-card *ngIf="user">
+<mat-card *ngIf="user" class="grey-back mt-4 white">
   <h1>Your Profile Details</h1>
   <!-- {{ user | json }} -->
   <mat-card-content>
     <div class="bootstrap-wrapper">
-      <div class="container">
+      <div class="container ">
         <div class="container text-center">
-          <img
-            src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg"
-            alt=""
-            class="profile-image"
-          />
+          <img src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg" alt=""
+            class="profile-image" />
 
           <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1>
         </div>
@@ -19,24 +16,24 @@
             <!-- //table Details  -->
             <table class="table text-center">
               <tr>
-                <td>Username</td>
-                <td>{{ user.username }}</td>
+                <td class="silver">Username</td>
+                <td class="white">{{ user.username }}</td>
               </tr>
               <tr>
-                <td>Userid</td>
-                <td>EXAM{{ user.id }}</td>
+                <td class="silver">Userid</td>
+                <td class="white">EXAM{{ user.id }}</td>
               </tr>
               <tr>
-                <td>Phone</td>
-                <td>{{ user.phone }}</td>
+                <td class="silver">Phone</td>
+                <td class="white">{{ user.phone }}</td>
               </tr>
               <tr>
-                <td>Role</td>
-                <td>{{ user.authorities[0].authority }}</td>
+                <td class="silver">Role</td>
+                <td class="white">{{ user.authorities[0].authority }}</td>
               </tr>
               <tr>
-                <td>Status</td>
-                <td>{{ user.enabled ? "ACTIVE" : "NOTACTIVE" }}</td>
+                <td class="silver">Status</td>
+                <td class="white">{{ user.enabled ? "ACTIVE" : "NOTACTIVE" }}</td>
               </tr>
             </table>
           </div>
@@ -45,7 +42,6 @@
     </div>
   </mat-card-content>
   <mat-card-actions class="text-center">
-    <button mat-raised-button color="primary">UPDATE</button>
-    <button mat-raised-button color="accent">SHARE</button>
+    <button mat-raised-button class="btn-blue">UPDATE</button>
   </mat-card-actions>
 </mat-card>

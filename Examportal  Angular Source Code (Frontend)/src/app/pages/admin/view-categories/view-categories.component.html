@@ -1,7 +1,17 @@
-<mat-card>
+<div class="row grey-back mt10 mr20 ml20 mt-4">
+  <div class="col-md-12">
+    <div class="container text-center m-2">
+      <button routerLink="/admin/add-category" mat-raised-button class="btn-blue">
+        Add New Category
+      </button>
+    </div>
+  </div>
+</div>
+
+<mat-card class="grey-back mt-4 silver mt10 mr20 ml20">
   <h1>All Categories</h1>
-  <mat-list>
-    <mat-list-item *ngFor="let c of categories">
+  <mat-list >
+    <mat-list-item *ngFor="let c of categories" class="white">
       <mat-icon mat-list-icon>category</mat-icon>
       <div mat-line>{{ c.title }}</div>
       <div mat-line>{{ c.description }}</div>
@@ -9,9 +19,5 @@
     </mat-list-item>
   </mat-list>
 
-  <div class="container text-center mt20">
-    <button routerLink="/admin/add-category" mat-raised-button color="accent">
-      Add New Category
-    </button>
-  </div>
+  
 </mat-card>
