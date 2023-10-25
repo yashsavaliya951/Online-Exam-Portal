@@ -1,3 +1,33 @@
-#s01{
-    background-color: #c5c6c7;
+.sidebar {
+    height: 100VH; /* Allow the sidebar to expand based on content */
+    /* Add other styling properties as needed */
+    left: 0%;
+    background-color: whitesmoke;
+  }
+  
+  .black{
+    color: #0B0C10;
+}
+.black-back{
+    background-color: #0B0C10;
+}
+.grey-back{
+    background-color: #1F2833;
+}
+.green{
+    color: #45a29e;
+}
+.white{
+    color: white;
+}
+
+.blue{
+    color: #66FCF1;
+}
+.btn-blue{
+    background-color: #66FCF1;
+    color: black;
+}
+.silver{
+    color: #C5C6C7;
 }

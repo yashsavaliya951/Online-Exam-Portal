@@ -39,4 +39,35 @@ body {
   margin-bottom: 10px !important;
 }
 
+.black{
+  color: #0B0C10;
+}
+.black-back{
+  background-color: #0B0C10;
+}
+.grey-back{
+  background-color: #1F2833;
+}
+.green{
+  color: #45a29e;
+}
+.white{
+  color: white;
+}
+
+.blue{
+  color: #66FCF1;
+}
+.btn-blue{
+  background-color: #66FCF1;
+  color: black;
+}
+.btn-blue-back{
+  background-color: none;
+  color: #45a29e;
+}
+.silver{
+  color: #C5C6C7;
+}
+
 

@@ -1,17 +1,16 @@
-<mat-card>
-  <mat-action-list>
-    <div mat-subheader>Available Categories</div>
-
-    <button mat-list-item routerLink="/user-dashboard/0">
-      <mat-icon mat-list-icon>quiz</mat-icon> All Quizzes
-    </button>
-    <button
-      [routerLink]="'/user-dashboard/' + c.cid"
-      mat-list-item
-      *ngFor="let c of categories"
-    >
-      <mat-icon mat-list-icon>quiz</mat-icon> {{ c.title }}
-    </button>
-  </mat-action-list>
-</mat-card>
-<!-- {{ categories | json }} -->
+<mat-card  class="full-height-card" style="background-color: #1f2833; border: 2px #C5C6C7;">
+      <mat-action-list>
+        <div mat-subheader style="color: white;">
+          <h3>Categories</h3>
+        </div>
+    
+        <button mat-list-item routerLink="/user-dashboard/0" style="color: #66fcf1;">
+          <mat-icon mat-list-icon>quiz</mat-icon> All Quizzes
+        </button>
+        <button style="color: #C5C6C7;" [routerLink]="'/user-dashboard/' + c.cid" mat-list-item
+          *ngFor="let c of categories">
+          <mat-icon mat-list-icon>quiz</mat-icon> {{ c.title }}
+        </button>
+      </mat-action-list>
+    </mat-card>
+    <!-- {{ categories | json }} -->

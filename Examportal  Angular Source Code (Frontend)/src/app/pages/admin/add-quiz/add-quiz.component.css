@@ -1,3 +1,25 @@
 .w100 {
   width: 100%;
 }
+
+::placeholder {
+  color: #C5C6C7;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #C5C6C7;
+}
+
+/* In your component's CSS or a global stylesheet */
+.green-toggle.mat-slide-toggle.mat-primary {
+  background-color: #45a29e; /* Change background color to green */
+}
+
+.green-toggle.mat-slide-toggle.mat-primary .mat-slide-toggle-bar {
+  background-color: #45a29e; /* Change bar color to green */
+}
+
+.green-toggle.mat-slide-toggle.mat-primary .mat-slide-toggle-thumb {
+  background-color: white; /* Change thumb color to white */
+}
