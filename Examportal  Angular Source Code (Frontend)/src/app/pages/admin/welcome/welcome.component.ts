@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminPanelData:UserService) { }
 
+  adminData:any;
   ngOnInit(): void {
+    this.adminPanelData.getAdminPanelData().subscribe((res:any)=>{
+      this.adminData = res;
+    })
   }
 
 }

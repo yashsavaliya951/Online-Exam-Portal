@@ -46,4 +46,8 @@ export class QuizService {
   public getActiveQuizzesOfCategory(cid) {
     return this._http.get(`${baseUrl}/quiz/category/active/${cid}`);
   }
+
+  GenerateInvoicePDF(invoiceno: any){
+    return this._http.get(`${baseUrl}/start/Invoice/generatepdf?InvoiceNo=`+invoiceno,{observe:'response',responseType:'blob'})
+  }
 }

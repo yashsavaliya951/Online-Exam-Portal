@@ -42,8 +42,7 @@
           <button mat-flat-button (click)="deleteQuestion(q.quesId)" color="warn">
             Delete
           </button>
-          <button style="margin-left: 1%;" mat-button class="btn-blue">Update</button>
-          
+          <button style="margin-left: 1%;" mat-button class="btn-blue" [routerLink]="'/admin/update-question/' + qId + '/' + q.quesId">Update</button>
         </mat-card-action>
       </mat-card>
     </div>

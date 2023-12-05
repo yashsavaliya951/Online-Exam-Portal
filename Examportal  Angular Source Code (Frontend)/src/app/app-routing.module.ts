@@ -20,6 +20,7 @@ import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         path: 'add-question/:qid/:title',
         component: AddQuestionComponent,
+      },
+      {
+        path: 'update-question/:qid/:quesId',
+        component: UpdateQuestionComponent,
       },
     ],
   },

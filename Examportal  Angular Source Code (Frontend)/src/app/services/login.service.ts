@@ -73,4 +73,8 @@ export class LoginService {
     let user = this.getUser();
     return user.authorities[0].authority;
   }
+
+  public quizzes() {
+    return this.http.get(`${baseUrl}/quiz/`);
+  }
 }

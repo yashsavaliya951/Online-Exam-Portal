@@ -6,6 +6,11 @@ import { QuestionService } from 'src/app/services/question.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 
+// pdf
+import * as pdfMake from 'pdfmake/build/pdfmake'
+import * as pdfFonts from 'pdfmake/build/vfs_fonts'
+(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
@@ -28,7 +33,7 @@ export class StartComponent implements OnInit {
     private _route: ActivatedRoute,
     private _question: QuestionService,
     private _quiz: QuizService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.preventBackButton();
@@ -123,5 +128,53 @@ export class StartComponent implements OnInit {
     // console.log('Marks Got ' + this.marksGot);
     // console.log('attempted ' + this.attempted);
     // console.log(this.questions);
+  }
+
+  // PDF
+  generatePDF() {
+    let styles=  {
+      header: {
+        fontSize: 25,
+        bold: true,
+        alignment: 'center'
+      },
+      subheader: {
+        fontSize: 15,
+        bold: true
+      },
+      quote: {
+        italics: true
+      },
+      small: {
+        fontSize: 8
+      },
+      margin1: {
+        margin: [0, 20]
+      },
+      margin2: {
+        fontSize: 15,
+        margin: [0, 20]
+      }
+    }
+    let dd = {
+      content: [
+        {
+          text: 'Quiz Result',
+          style: [`${styles.header}`, `${styles.margin1}`]
+        },
+        {
+          text: ['\nMarks got: ',
+            `${this.marksGot}`,
+            '\nCorrect Answers : ',
+            `${this.correctAnswers}`,
+            '\nQuestions Attempted :',
+            `${this.attempted}`,
+          ],
+          style: 'margin2'
+        },
+      ],
+    }
+
+    pdfMake.createPdf(dd).print();
   }
 }
