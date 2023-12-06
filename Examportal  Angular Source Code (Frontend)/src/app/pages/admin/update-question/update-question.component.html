@@ -28,6 +28,7 @@
             </mat-form-field> -->
 
             <ckeditor
+              *ngIf="question?.content"
               [editor]="Editor"
               name="content"
               [(ngModel)]="question.content"
@@ -39,7 +40,7 @@
               <div class="col-md-6">
                 <!-- option1 -->
 
-                <mat-form-field class="w100">
+                <mat-form-field class="w100" *ngIf="question?.option1">
                   <mat-label class="silver">Enter Option1</mat-label>
                   <input
                     required
@@ -52,7 +53,7 @@
               </div>
               <div class="col-md-6">
                 <!-- option2 -->
-                <mat-form-field class="w100">
+                <mat-form-field class="w100" *ngIf="question?.option2">
                   <mat-label class="silver">Enter Option2</mat-label>
                   <input
                     required
@@ -68,7 +69,7 @@
             <div class="row">
               <div class="col-md-6">
                 <!-- option3 -->
-                <mat-form-field class="w100">
+                <mat-form-field class="w100" *ngIf="question?.option3">
                   <mat-label class="silver">Enter Option3</mat-label>
                   <input
                     [(ngModel)]="question.option3"
@@ -80,7 +81,7 @@
               </div>
               <div class="col-md-6">
                 <!-- option4 -->
-                <mat-form-field class="w100">
+                <mat-form-field class="w100" *ngIf="question?.option4">
                   <mat-label class="silver">Enter Option4</mat-label>
                   <input
                     [(ngModel)]="question.option4"
@@ -93,11 +94,11 @@
             </div>
 
             <!-- answer -->
-            <mat-form-field class="w100">
+            <mat-form-field class="w100" *ngIf="question?.answer">
               <mat-label class="silver">Select Answer</mat-label>
               <mat-select required [(ngModel)]="question.answer" class="silver" name="answer">
                 <mat-option
-                  *ngIf="question.option1"
+                  *ngIf="question?.option1"
                   [value]="question.option1"
                   >{{ question.option1 }}</mat-option
                 >

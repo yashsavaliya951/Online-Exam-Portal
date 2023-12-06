@@ -15,7 +15,8 @@ export class UpdateQuestionComponent implements OnInit {
   qId;
   quesId;
   qTitle;
-  question = {
+  question:any = {
+    quesId:'',
     quiz: {},
     content: '',
     option1: '',
@@ -38,20 +39,30 @@ export class UpdateQuestionComponent implements OnInit {
     console.log(this.qId);
     console.log(this.quesId);
     
+    this.question.quiz['qId'] = this.qId;
     setTimeout(() => {
       this.callData();
-    }, 500);
+    }, 0);
     // this.qTitle = this._route.snapshot.params.title;
-    this.question.quiz['qId'] = this.qId;
     
   }
   
   callData(){
     this._question.getQuestionsOfQuizForTest(this.qId).subscribe((res:any)=>{
       this.questions = res;
+      console.log('hi');
+      
+      console.log(typeof this.quesId);
+      let res2=this.questions.filter(element => {
+        // console.log(typeof element.quesId);
+        
+        return (element.quesId==this.quesId)
+      });
+      // console.log(res2);
+      this.question =res2[0];
+      
       console.log(this.questions);
-
-      this.question = this.questions.find(obj => obj.quesId === 34);
+      console.log(this.question);
     })
   }
   formSubmit() {
