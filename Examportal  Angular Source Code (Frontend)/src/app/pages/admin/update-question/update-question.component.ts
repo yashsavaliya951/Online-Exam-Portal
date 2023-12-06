@@ -61,6 +61,7 @@ export class UpdateQuestionComponent implements OnInit {
       // console.log(res2);
       this.question =res2[0];
       
+      
       console.log(this.questions);
       console.log(this.question);
     })
